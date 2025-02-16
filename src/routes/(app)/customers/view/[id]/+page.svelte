@@ -54,6 +54,7 @@
 							autocorrect="off"
 							disabled={isLoading}
 							bind:value={$form.fullName}
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.fullName}
 							<small class="text-red-500">{$errors.fullName}</small>
@@ -83,6 +84,7 @@
 								autocorrect="off"
 								disabled={isLoading}
 								bind:value={$form.tin}
+								onclick={(e) => e.currentTarget.select()}
 							/>
 							{#if $errors.tin}
 								<small class="text-red-500">{$errors.tin}</small>
@@ -102,6 +104,7 @@
 							autocorrect="off"
 							disabled={isLoading}
 							bind:value={$form.phone}
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.phone}
 							<small class="text-red-500">{$errors.phone}</small>
@@ -120,6 +123,7 @@
 							autocorrect="off"
 							disabled={isLoading}
 							bind:value={$form.email}
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.email}
 							<small class="text-red-500">{$errors.email}</small>
@@ -136,6 +140,7 @@
 							autocomplete="username"
 							disabled={isLoading}
 							bind:value={$form.address}
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.address}
 							<small class="text-red-500">{$errors.address}</small>
@@ -152,6 +157,7 @@
 							autocomplete="username"
 							disabled={isLoading}
 							bind:value={$form.notes}
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.notes}
 							<small class="text-red-500">{$errors.notes}</small>

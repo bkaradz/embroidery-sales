@@ -52,6 +52,7 @@
 							disabled={isLoading}
 							bind:value={$form.fullName}
 							required
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.fullName}
 							<small class="text-red-500">{$errors.fullName}</small>
@@ -71,6 +72,7 @@
 							disabled={isLoading}
 							bind:value={$form.username}
 							required
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.username}
 							<small class="text-red-500">{$errors.username}</small>
@@ -90,6 +92,7 @@
 							disabled={isLoading}
 							bind:value={$form.password}
 							required
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.password}
 							<small class="text-red-500">{$errors.password}</small>
@@ -109,6 +112,7 @@
 							disabled={isLoading}
 							bind:value={$form.confirmPassword}
 							required
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.confirmPassword}
 							<small class="text-red-500">{$errors.confirmPassword}</small>

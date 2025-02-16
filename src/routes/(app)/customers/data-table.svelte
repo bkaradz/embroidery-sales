@@ -133,6 +133,7 @@
 				table.getColumn('fullName')?.setFilterValue(e.currentTarget.value);
 			}}
 			class="max-w-sm rounded"
+			onclick={(e) => e.currentTarget.select()}
 		/>
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger>

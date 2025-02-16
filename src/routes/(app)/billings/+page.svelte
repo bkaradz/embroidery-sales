@@ -255,6 +255,7 @@
 											value={item.quantity}
 											onchange={(e) => changeQuantity(e, item.id)}
 											onwheel={(e) => mouseWheel(e, item.id)}
+											onclick={(e) => e.currentTarget.select()}
 										/>
 										<button
 											type="button"
@@ -400,6 +401,7 @@
 					<Input
 						class="rounded text-right select-all"
 						bind:value={purchaseOrderNumber}
+						onclick={(e) => e.currentTarget.select()}
 						name="purchaseOrderNumber"
 						id="purchaseOrderNumber"
 						type="text"

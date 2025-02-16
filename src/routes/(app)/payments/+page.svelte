@@ -602,6 +602,7 @@
 									class="rounded text-right select-all"
 									bind:value={currencyInput}
 									onchange={(e) => currenciesInputChange(e)}
+									onclick={(e) => e.currentTarget.select()}
 									id="name"
 									type="number"
 								/>
@@ -724,6 +725,7 @@
 								name="bankMobileCardPaidAmount"
 								id="bankMobileCardPaidAmount"
 								type="number"
+								onclick={(e) => e.currentTarget.select()}
 							/>
 						</div>
 						<div class="flex flex-col space-y-1.5">
@@ -735,6 +737,7 @@
 								id="referenceNumber"
 								type="text"
 								required
+								onclick={(e) => e.currentTarget.select()}
 							/>
 						</div>
 					{/if}
@@ -760,6 +763,7 @@
 								name="bankMobileCardPaidAmount"
 								id="bankMobileCardPaidAmount"
 								type="number"
+								onclick={(e) => e.currentTarget.select()}
 							/>
 						</div>
 						<div class="flex flex-col space-y-1.5">
@@ -771,6 +775,7 @@
 								id="referenceNumber"
 								type="text"
 								required
+								onclick={(e) => e.currentTarget.select()}
 							/>
 						</div>
 					{/if}
@@ -784,6 +789,7 @@
 								name="bankMobileCardPaidAmount"
 								id="bankMobileCardPaidAmount"
 								type="number"
+								onclick={(e) => e.currentTarget.select()}
 							/>
 						</div>
 						<div class="flex flex-col space-y-1.5">
@@ -794,6 +800,7 @@
 								name="referenceNumber"
 								id="referenceNumber"
 								type="text"
+								onclick={(e) => e.currentTarget.select()}
 							/>
 						</div>
 					{/if}

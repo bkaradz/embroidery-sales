@@ -73,6 +73,7 @@
 							disabled={isLoading}
 							bind:value={$form.receipt}
 							class="rounded text-left select-all"
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.receipt}
 							<small class="text-red-500">{$errors.receipt}</small>
@@ -112,6 +113,7 @@
 								disabled={isLoading}
 								bind:value={$form.description}
 								class="rounded text-left select-all"
+								onclick={(e) => e.currentTarget.select()}
 							/>
 							{#if $errors.description}
 								<small class="text-red-500">{$errors.description}</small>

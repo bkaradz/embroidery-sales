@@ -95,6 +95,7 @@
 						placeholder="Reason for cancellation"
 						bind:value={cancellationReason}
 						required
+						onclick={(e) => e.currentTarget.select()}
 					/>
 				</div>
 				<Button type="submit" class="w-full rounded" onclick={() => closeDialog()}>Submit</Button>

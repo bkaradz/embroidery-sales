@@ -45,6 +45,7 @@
 						accept=".csv"
 						type="file"
 						oninput={(e) => ($form.file = e.currentTarget.files?.item(0) as File)}
+						onclick={(e) => e.currentTarget.select()}
 					/>
 					<Button type="submit" class="rounded">Submit</Button>
 				</div>

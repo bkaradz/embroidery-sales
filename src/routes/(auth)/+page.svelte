@@ -41,6 +41,7 @@
 							name="username"
 							placeholder="Username"
 							required
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.username}
 							<small class="text-red-500">{$errors.username}</small>
@@ -50,7 +51,14 @@
 						<div class="flex items-center">
 							<Label class="text-xs" for="password">Password</Label>
 						</div>
-						<Input class="rounded" id="password" type="password" name="password" required />
+						<Input
+							onclick={(e) => e.currentTarget.select()}
+							class="rounded"
+							id="password"
+							type="password"
+							name="password"
+							required
+						/>
 						{#if $errors.password}
 							<small class="text-red-500">{$errors.password}</small>
 						{/if}

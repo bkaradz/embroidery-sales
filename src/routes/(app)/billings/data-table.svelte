@@ -138,6 +138,7 @@
 				table.getColumn('name')?.setFilterValue(e.currentTarget.value);
 			}}
 			class="max-w-sm rounded"
+			onclick={(e) => e.currentTarget.select()}
 		/>
 		<Input
 			type="number"
@@ -150,6 +151,7 @@
 			oninput={(e) => {
 				table.getColumn('stitches')?.setFilterValue(e.currentTarget.value);
 			}}
+			onclick={(e) => e.currentTarget.select()}
 		/>
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger>

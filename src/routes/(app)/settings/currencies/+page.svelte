@@ -263,6 +263,7 @@
 						name="purchaseOrderNumber"
 						id="purchaseOrderNumber"
 						type="text"
+						onclick={(e) => e.currentTarget.select()}
 					/>
 				</div>
 				<div class="flex flex-col space-y-1.5">

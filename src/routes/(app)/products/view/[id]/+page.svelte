@@ -69,6 +69,7 @@
 							autocorrect="off"
 							disabled={isLoading}
 							bind:value={$form.name}
+							onclick={(e) => e.currentTarget.select()}
 						/>
 						{#if $errors.name}
 							<small class="text-red-500">{$errors.name}</small>
@@ -120,6 +121,7 @@
 								disabled={isLoading}
 								bind:value={$form.stitches}
 								class="rounded text-right select-all"
+								onclick={(e) => e.currentTarget.select()}
 							/>
 							{#if $errors.stitches}
 								<small class="text-red-500">{$errors.stitches}</small>
@@ -164,6 +166,7 @@
 								disabled={isLoading}
 								bind:value={$form.basePrice}
 								class="rounded text-right select-all"
+								onclick={(e) => e.currentTarget.select()}
 							/>
 							{#if $errors.basePrice}
 								<small class="text-red-500">{$errors.basePrice}</small>
@@ -182,6 +185,7 @@
 								disabled={$form.productCategory === 'Services' || isLoading}
 								bind:value={$form.stockQuantity}
 								class="rounded text-right select-all"
+								onclick={(e) => e.currentTarget.select()}
 							/>
 							{#if $errors.stockQuantity}
 								<small class="text-red-500">{$errors.stockQuantity}</small>

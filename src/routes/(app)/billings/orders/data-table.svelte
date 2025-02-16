@@ -177,6 +177,7 @@
 					table.getColumn('fullName')?.setFilterValue(e.currentTarget.value);
 				}}
 				class="max-w-sm rounded"
+				onclick={(e) => e.currentTarget.select()}
 			/>
 			<Input
 				type="number"
@@ -189,6 +190,7 @@
 				oninput={(e) => {
 					table.getColumn('orderId')?.setFilterValue(e.currentTarget.value);
 				}}
+				onclick={(e) => e.currentTarget.select()}
 			/>
 			<DataTableFacetedFilter
 				filterValues={['Pending']}

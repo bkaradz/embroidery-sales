@@ -16,15 +16,7 @@
 			avatar: string;
 		};
 	} = $props();
-
-	// const sidebar = useSidebar();
 </script>
-
-<!-- <div
-	class="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded"
-	>
-    <Gem class="size-4" />
-  </div> -->
 
 <Sidebar.Menu>
 	<Sidebar.MenuItem>

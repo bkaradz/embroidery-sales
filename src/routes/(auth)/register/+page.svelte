@@ -3,10 +3,9 @@
 	import Loader from 'lucide-svelte/icons/loader';
 	import Label from '$lib/components/ui/label/label.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
+	import { superForm } from 'sveltekit-superforms';
 	import * as Card from '$lib/components/ui/card/index';
-	import { enhance } from '$app/forms';
-	// import { superForm } from 'sveltekit-superforms';
-	// import { toast } from 'svelte-sonner';
+	import { toast } from 'svelte-sonner';
 
 	let { data } = $props();
 
@@ -15,19 +14,19 @@
 
 	let isLoading = false;
 
-	// const { form, errors, enhance } = superForm(data.form, {
-	// 	onUpdated({ form }) {
-	// 		if (form.message) {
-	// 			// Display the message using a toast library
-	// 			if (form.message.status == 'success') {
-	// 				toast.success(form.message.text);
-	// 			}
-	// 			if (form.message.status == 'error') {
-	// 				toast.error(form.message.text);
-	// 			}
-	// 		}
-	// 	}
-	// });
+	const { form, errors, enhance } = superForm(data.form, {
+		onUpdated({ form }) {
+			if (form.message) {
+				// Display the message using a toast library
+				if (form.message.status == 'success') {
+					toast.success(form.message.text);
+				}
+				if (form.message.status == 'error') {
+					toast.error(form.message.text);
+				}
+			}
+		}
+	});
 </script>
 
 <div class="flex h-screen w-full place-content-center items-center justify-center px-4">
@@ -51,11 +50,12 @@
 							autocomplete="username"
 							autocorrect="off"
 							disabled={isLoading}
+							bind:value={$form.fullName}
 							required
 						/>
-						<!-- {#if $errors.fullName}
+						{#if $errors.fullName}
 							<small class="text-red-500">{$errors.fullName}</small>
-						{/if} -->
+						{/if}
 					</div>
 					<div class="grid gap-1">
 						<Label class="text-xs" for="username">Username</Label>
@@ -69,11 +69,12 @@
 							autocomplete="username"
 							autocorrect="off"
 							disabled={isLoading}
+							bind:value={$form.username}
 							required
 						/>
-						<!-- {#if $errors.username}
+						{#if $errors.username}
 							<small class="text-red-500">{$errors.username}</small>
-						{/if} -->
+						{/if}
 					</div>
 					<div class="grid gap-1">
 						<Label class="text-xs" for="password">Password</Label>
@@ -87,11 +88,12 @@
 							autocomplete="username"
 							autocorrect="off"
 							disabled={isLoading}
+							bind:value={$form.password}
 							required
 						/>
-						<!-- {#if $errors.password}
+						{#if $errors.password}
 							<small class="text-red-500">{$errors.password}</small>
-						{/if} -->
+						{/if}
 					</div>
 					<div class="grid gap-1">
 						<Label class="text-xs" for="confirmPassword">Confirm Password</Label>
@@ -105,11 +107,12 @@
 							autocomplete="username"
 							autocorrect="off"
 							disabled={isLoading}
+							bind:value={$form.confirmPassword}
 							required
 						/>
-						<!-- {#if $errors.confirmPassword}
+						{#if $errors.confirmPassword}
 							<small class="text-red-500">{$errors.confirmPassword}</small>
-						{/if} -->
+						{/if}
 					</div>
 					<Button type="submit" disabled={isLoading} class="rounded">
 						{#if isLoading}

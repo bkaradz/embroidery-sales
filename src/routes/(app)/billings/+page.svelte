@@ -356,7 +356,7 @@
 						</h5>
 						{#if data.credits}
 							<div class="my-3">
-								<div class=" dark:border-neutral-500">
+								<div class="">
 									<h5 class="flex items-center justify-start">
 										<span class="mr-2 text-green-600"> Credit: </span>
 										<span class="rounded bg-blue-100 px-2 text-blue-700">

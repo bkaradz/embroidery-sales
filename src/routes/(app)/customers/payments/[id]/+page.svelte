@@ -19,9 +19,9 @@
 	</div>
 	<div class="sticky w-80 flex-none rounded border p-2">
 		{#if customerDetails}
-			<div class="block rounded bg-neutral-50 text-left shadow-md dark:bg-neutral-700">
-				<div class="border-b-2 border-neutral-100 px-3 py-2 dark:border-neutral-500">
-					<h5 class="flex items-center justify-start text-neutral-500 dark:text-neutral-300">
+			<div class="block rounded">
+				<div class="border-b px-3 py-2">
+					<h5 class="flex items-center justify-start">
 						<span class="mr-2 text-green-600">
 							{customerDetails?.fullName}
 						</span>

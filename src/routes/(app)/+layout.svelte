@@ -3,7 +3,24 @@
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import * as Select from '$lib/components/ui/select/index';
+	import { setContext } from 'svelte';
+	import Moon from 'lucide-svelte/icons/moon';
+	import Sun from 'lucide-svelte/icons/sun';
+	import { toggleMode } from 'mode-watcher';
+	import Button from '$lib/components/ui/button/button.svelte';
+
 	let { data, children } = $props();
+
+	const currenciesNames = $state(data.currenciesNames);
+
+	let viewCurrency = $state('USD');
+
+	const triggerContent = $derived(
+		currenciesNames.find((f) => f.value === viewCurrency)?.label ?? 'Select a currency'
+	);
+
+	setContext('viewCurrency', () => viewCurrency);
 </script>
 
 <Sidebar.Provider>
@@ -26,9 +43,39 @@
 						</Breadcrumb.Item>
 					</Breadcrumb.List>
 				</Breadcrumb.Root>
+				<div class="flex gap-2">
+					<Select.Root type="single" name="status" bind:value={viewCurrency}>
+						<Select.Trigger class="w-[180px] rounded">
+							{triggerContent}
+						</Select.Trigger>
+						<Select.Content class="rounded">
+							<Select.Group>
+								<Select.GroupHeading>View Currency</Select.GroupHeading>
+								{#each currenciesNames as state (state.value)}
+									<Select.Item class="rounded" value={state.value} label={state.label} />
+								{/each}
+							</Select.Group>
+						</Select.Content>
+					</Select.Root>
+
+					<Button
+						class="bg-sidebar-secondary text-sidebar-secondary-foreground rounded"
+						onclick={toggleMode}
+						variant="outline"
+						size="icon"
+					>
+						<Sun
+							class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
+						/>
+						<Moon
+							class="absolute h-[1.2rem] w-[1.2rem]  scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
+						/>
+						<span class="sr-only">Toggle theme</span>
+					</Button>
+				</div>
 			</div>
 		</header>
-		<div class="flex flex-1 flex-col">
+		<div class="flex flex-1 flex-col px-2">
 			{@render children()}
 		</div>
 	</Sidebar.Inset>

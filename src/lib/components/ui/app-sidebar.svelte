@@ -1,14 +1,3 @@
-<script lang="ts" module>
-	// This is sample data.
-	const data = {
-		user: {
-			name: 'shadcn',
-			email: 'm@example.com',
-			avatar: '/avatars/shadcn.jpg'
-		}
-	};
-</script>
-
 <script lang="ts">
 	import NavMain from '$lib/components/ui/nav-main.svelte';
 	import NavUser from '$lib/components/ui/nav-user.svelte';
@@ -16,12 +5,14 @@
 	import type { ComponentProps } from 'svelte';
 	import Gem from 'lucide-svelte/icons/gem';
 	import { navData } from '../../utility/navData';
+	import type { GetUserById } from '$lib/server/routes/auth';
 
 	let {
+		data,
 		ref = $bindable(null),
 		collapsible = 'icon',
 		...restProps
-	}: ComponentProps<typeof Sidebar.Root> = $props();
+	}: ComponentProps<typeof Sidebar.Root> & { data: GetUserById } = $props();
 </script>
 
 <Sidebar.Root bind:ref variant="sidebar" {collapsible} {...restProps}>
@@ -50,7 +41,7 @@
 		<NavMain items={navData.navMain} />
 	</Sidebar.Content>
 	<Sidebar.Footer>
-		<NavUser user={data.user} />
+		<NavUser user={{ name: data.fullName, email: data.username, avatar: '' }} />
 	</Sidebar.Footer>
 	<Sidebar.Rail />
 </Sidebar.Root>

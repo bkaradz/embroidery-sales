@@ -17,14 +17,6 @@
 			if ($flash.type == 'error') {
 				toast.error($flash.message);
 			}
-			/**
-	      if ($flash.type == 'info') {
-	        toast.info($flash.message);
-	      }
-	      if ($flash.type == 'warning') {
-	        toast.warning($flash.message);
-	      }
-	    */
 		}
 
 		// Clear the flash message to avoid double-toasting.

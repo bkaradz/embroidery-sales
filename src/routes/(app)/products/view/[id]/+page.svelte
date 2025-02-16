@@ -45,7 +45,7 @@
 </script>
 
 <div class="flex items-center justify-center">
-	<Card.Root class="mx-auto min-w-96 max-w-sm ">
+	<Card.Root class="mx-auto max-w-sm min-w-96 rounded">
 		<Card.Header>
 			<Card.Title class="text-center text-2xl">View a Product</Card.Title>
 			<Card.Description>View the details of the Product</Card.Description>
@@ -119,7 +119,7 @@
 								autocorrect="off"
 								disabled={isLoading}
 								bind:value={$form.stitches}
-								class="select-all rounded text-right"
+								class="rounded text-right select-all"
 							/>
 							{#if $errors.stitches}
 								<small class="text-red-500">{$errors.stitches}</small>
@@ -163,7 +163,7 @@
 								autocorrect="off"
 								disabled={isLoading}
 								bind:value={$form.basePrice}
-								class="select-all rounded text-right"
+								class="rounded text-right select-all"
 							/>
 							{#if $errors.basePrice}
 								<small class="text-red-500">{$errors.basePrice}</small>
@@ -181,7 +181,7 @@
 								autocorrect="off"
 								disabled={$form.productCategory === 'Services' || isLoading}
 								bind:value={$form.stockQuantity}
-								class="select-all rounded text-right"
+								class="rounded text-right select-all"
 							/>
 							{#if $errors.stockQuantity}
 								<small class="text-red-500">{$errors.stockQuantity}</small>

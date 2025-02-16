@@ -15,7 +15,7 @@
 	}: ComponentProps<typeof Sidebar.Root> & { data: GetUserById } = $props();
 </script>
 
-<Sidebar.Root bind:ref variant="sidebar" {collapsible} {...restProps}>
+<Sidebar.Root bind:ref variant="floating" {collapsible} {...restProps}>
 	<Sidebar.Header>
 		<Sidebar.Menu>
 			<Sidebar.MenuItem>

@@ -30,7 +30,7 @@
 </script>
 
 <div class="flex h-screen w-full place-content-center items-center justify-center rounded px-4">
-	<Card.Root class="">
+	<Card.Root class="rounded">
 		<Card.Header>
 			<Card.Title class="text-center text-2xl">Upload Products</Card.Title>
 			<Card.Description>Select a csv file with embroidery products data</Card.Description>

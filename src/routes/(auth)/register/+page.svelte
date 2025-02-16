@@ -30,7 +30,7 @@
 </script>
 
 <div class="flex h-screen w-full place-content-center items-center justify-center px-4">
-	<Card.Root class="mx-auto max-w-sm">
+	<Card.Root class="mx-auto max-w-sm rounded">
 		<Card.Header>
 			<Card.Title class="text-center text-2xl">Create an account</Card.Title>
 			<Card.Description>Enter your username below to create your account</Card.Description>

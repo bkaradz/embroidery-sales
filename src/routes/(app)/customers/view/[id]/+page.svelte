@@ -30,7 +30,7 @@
 </script>
 
 <div class="flex items-center justify-center">
-	<Card.Root class="mx-auto min-w-96 max-w-sm ">
+	<Card.Root class="mx-auto max-w-sm min-w-96 rounded">
 		<Card.Header>
 			<Card.Title class="text-center text-2xl">View a Customer</Card.Title>
 			<Card.Description>View Customer details</Card.Description>
@@ -44,7 +44,7 @@
 					<div class="grid gap-2">
 						<Label class="text-xs " for="fullName">Full Name</Label>
 						<Input
-              class="rounded"
+							class="rounded"
 							id="fullName"
 							name="fullName"
 							placeholder="Full Name"
@@ -73,7 +73,7 @@
 						<div class="grid gap-1">
 							<Label class="Paid Amount text-xs" for="tin">TIN</Label>
 							<Input
-                class="rounded"
+								class="rounded"
 								id="tin"
 								name="tin"
 								placeholder="TIN"
@@ -92,7 +92,7 @@
 					<div class="grid gap-1">
 						<Label class="text-xs " for="phone">Phone Number</Label>
 						<Input
-              class="rounded"
+							class="rounded"
 							id="phone"
 							name="phone"
 							placeholder="Phone Number"
@@ -110,7 +110,7 @@
 					<div class="grid gap-1">
 						<Label class="text-xs " for="email">Email</Label>
 						<Input
-              class="rounded"
+							class="rounded"
 							id="email"
 							name="email"
 							placeholder="Email"
@@ -128,7 +128,7 @@
 					<div class="grid gap-1">
 						<Label class="text-xs " for="address">Address</Label>
 						<Textarea
-              class="rounded"
+							class="rounded"
 							id="address"
 							name="address"
 							placeholder="Address"
@@ -144,7 +144,7 @@
 					<div class="grid gap-1">
 						<Label class="text-xs " for="notes">Notes</Label>
 						<Textarea
-              class="rounded"
+							class="rounded"
 							id="notes"
 							name="notes"
 							placeholder="Notes"

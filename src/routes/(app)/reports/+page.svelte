@@ -7,7 +7,7 @@
 	const { data } = $props();
 </script>
 
-<Card.Root class="h-[89cqh] w-full rounded-md">
+<Card.Root class="h-[89cqh] w-full rounded">
 	<Card.Header>
 		<Card.Title class="text-center text-2xl">View Reports</Card.Title>
 		<Card.Description>Click the report to view</Card.Description>

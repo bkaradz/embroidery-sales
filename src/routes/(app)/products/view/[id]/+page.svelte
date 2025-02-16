@@ -5,7 +5,7 @@
 	import * as Select from '$lib/components/ui/select/index';
 	import { Switch } from '$lib/components/ui/switch/index';
 	import { Textarea } from '$lib/components/ui/textarea/index';
-	import { productCategories } from '$lib/utility/configList.js';
+	import { productCategories } from '$lib/utility/config-list.js';
 	import { toast } from 'svelte-sonner';
 	import { superForm } from 'sveltekit-superforms';
 

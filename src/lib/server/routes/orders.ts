@@ -1,4 +1,4 @@
-import { calculateCart } from "$lib/utility/calculateCart";
+import { calculateCart } from "$lib/utility/calculate-cart";
 import type { CartItem, OrdersSchema } from "$lib/utility/schemas";
 import { error } from "@sveltejs/kit";
 import Big from "big.js";
@@ -7,7 +7,7 @@ import { and, eq, inArray, ne } from "drizzle-orm";
 import { db } from "../db";
 import { customers, orderItems, orders, production, products, type NewOrderItems, type NewOrders, type NewProduction, type OrderItems, type Products } from "../db/schema/schema";
 import { getCustomerById } from "./customers";
-import { getPricingTiersById } from "./pricingTiers";
+import { getPricingTiersById } from "./pricing-tiers";
 
 
 export const createNewOrder = async ({ items, userId, customerId, pricingTierId, purchaseOrderNumber, status = 'Pending', orderStatus = 'Quotation' }: OrdersSchema) => {

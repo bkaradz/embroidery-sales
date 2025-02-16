@@ -2,8 +2,8 @@ import '$lib/assets/fonts/Roboto-Black-normal'; // Roboto-Black
 import '$lib/assets/fonts/Roboto-Regular-normal'; // Roboto-Regular
 import logo from '$lib/assets/logo.png';
 import type { GetOrderDetails } from '$lib/server/routes/orders';
-import { formatCurrency } from '$lib/utility/convertCurrencies';
-import { generateOrderNumber } from '$lib/utility/generateOrderNumber';
+import { formatCurrency } from '$lib/utility/convert-currencies';
+import { generateOrderNumber } from '$lib/utility/generate-order-number';
 import type { OrderStatusPrint } from '$lib/utility/lists';
 import type { Converter } from '$lib/utility/schemas';
 import Big from 'big.js';

@@ -2,11 +2,11 @@ import { superValidate, fail, message, withFiles } from 'sveltekit-superforms';
 import type { PageServerLoad } from './$types';
 import { zod } from 'sveltekit-superforms/adapters';
 import { z } from 'zod';
-import parseCsv from '$lib/utility/parseCsv';
+import parseCsv from '$lib/utility/parse-csv';
 import { uploadProducts } from '$lib/server/routes/products';
 import { redirect } from '@sveltejs/kit';
 import { productArraySchema, type ProductArraySchema } from '$lib/utility/schemas';
-import { productDataConversion, type ConProduct } from '$lib/utility/productConversion';
+import { productDataConversion, type ConProduct } from '$lib/utility/product-conversion';
 import type { NewProducts } from '$lib/server/db/schema/schema';
 
 const fileUploadSchema = z.object({
@@ -20,7 +20,7 @@ export const load = (async () => {
 }) satisfies PageServerLoad;
 
 export const actions = {
-  default: async ({ request,  locals }) => {
+  default: async ({ request, locals }) => {
 
     if (!locals.user) {
       return redirect(302, "/");
@@ -49,9 +49,9 @@ export const actions = {
     if (!validatedResult.success) {
       return message(form, { status: 'error', text: 'Products validation failed' });
     }
-  
 
-    const chunks = function(array: ProductArraySchema, size: number) {
+
+    const chunks = function (array: ProductArraySchema, size: number) {
       const results = [];
       while (array.length) {
         results.push(array.splice(0, size));
@@ -60,8 +60,8 @@ export const actions = {
     };
 
     // await createProducts(userId, processedData)
-    chunks(validatedResult.data, 1000).forEach(async(product) => {
-      
+    chunks(validatedResult.data, 1000).forEach(async (product) => {
+
       await uploadProducts(product as unknown as NewProducts[])
     })
 

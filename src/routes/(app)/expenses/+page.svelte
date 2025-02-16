@@ -4,7 +4,7 @@
 	import { Input } from '$lib/components/ui/input/index';
 	import { Label } from '$lib/components/ui/label/index';
 	import * as Select from '$lib/components/ui/select/index';
-	import { formatCurrency, fx } from '$lib/utility/convertCurrencies.js';
+	import { formatCurrency, fx } from '$lib/utility/convert-currencies.js';
 	import { expensesCategories, transactionPaymentMethods } from '$lib/utility/lists.js';
 	import Loader from 'lucide-svelte/icons/loader';
 	import DoubleArrowRight from 'svelte-radix/DoubleArrowRight.svelte';

@@ -1,5 +1,5 @@
 import type { Customers, Orders } from '$lib/server/db/schema/schema';
-import { getTodaysCashRegister } from '$lib/server/routes/cashRegister';
+import { getTodaysCashRegister } from '$lib/server/routes/cash-register';
 import { getCreditsTotalsByCustomerId, type GetCreditsTotalsByCustomerId } from '$lib/server/routes/credits';
 import { getDefaultCurrencies } from '$lib/server/routes/currencies';
 import { customerSelection, getCustomerById } from '$lib/server/routes/customers';

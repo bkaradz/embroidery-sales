@@ -9,7 +9,7 @@
 	import { superForm } from 'sveltekit-superforms';
 	import * as Card from '$lib/components/ui/card/index';
 	import * as Select from '$lib/components/ui/select/index';
-	import { productCategories } from '$lib/utility/configList.js';
+	import { productCategories } from '$lib/utility/config-list.js';
 
 	let { data } = $props();
 

@@ -1,6 +1,6 @@
-import { createCashRegister, getTodaysCashRegister } from '$lib/server/routes/cashRegister';
+import { createCashRegister, getTodaysCashRegister } from '$lib/server/routes/cash-register';
 import { getDefaultRates } from '$lib/server/routes/currencies';
-import { fx } from '$lib/utility/convertCurrencies.js';
+import { fx } from '$lib/utility/convert-currencies.js';
 import type { CurrencyCode } from '$lib/utility/lists';
 import { logger } from '$lib/utility/logger';
 import { registerSchema } from '$lib/utility/schemas';

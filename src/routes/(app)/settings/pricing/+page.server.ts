@@ -1,4 +1,4 @@
-import { createNewPricingTier } from '$lib/server/routes/pricingTiers';
+import { createNewPricingTier } from '$lib/server/routes/pricing-tiers';
 import { pricingTierSchema } from '$lib/utility/schemas';
 import { redirect } from 'sveltekit-flash-message/server';
 import { superValidate } from 'sveltekit-superforms';

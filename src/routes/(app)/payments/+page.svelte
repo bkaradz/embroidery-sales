@@ -13,9 +13,9 @@
 	import * as Select from '$lib/components/ui/select/index';
 	import * as Table from '$lib/components/ui/table/index';
 	import type { Orders } from '$lib/server/db/schema/schema';
-	import { paymentStore } from '$lib/stores/paymentStore';
-	import { bankList, mobilePaymentList, paymentList } from '$lib/utility/configList.js';
-	import { formatCurrency, fx } from '$lib/utility/convertCurrencies.js';
+	import { paymentStore } from '$lib/stores/payment-store';
+	import { bankList, mobilePaymentList, paymentList } from '$lib/utility/config-list.js';
+	import { formatCurrency, fx } from '$lib/utility/convert-currencies.js';
 	import type { TransactionPaymentMethodsUnion } from '$lib/utility/lists.js';
 	import { cn } from '$lib/utils';
 	import type { ActionResult } from '@sveltejs/kit';

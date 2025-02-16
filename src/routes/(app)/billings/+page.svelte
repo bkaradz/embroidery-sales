@@ -13,10 +13,10 @@
 	import * as Select from '$lib/components/ui/select/index';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import * as Table from '$lib/components/ui/table/index';
-	import { cartItems } from '$lib/stores/billingStore';
-	import { calculateCart } from '$lib/utility/calculateCart';
-	import { status } from '$lib/utility/configList';
-	import { formatCurrency } from '$lib/utility/convertCurrencies';
+	import { cartItems } from '$lib/stores/billing-store';
+	import { calculateCart } from '$lib/utility/calculate-cart';
+	import { status } from '$lib/utility/config-list';
+	import { formatCurrency } from '$lib/utility/convert-currencies';
 	import type { CartItem } from '$lib/utility/schemas';
 	import { cn } from '$lib/utils';
 	import type { ActionResult } from '@sveltejs/kit';

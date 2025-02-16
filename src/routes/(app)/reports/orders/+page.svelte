@@ -2,7 +2,7 @@
 	import { browser } from '$app/environment';
 	import PdfViewer from '$lib/components/ui/pdf-viewer.svelte';
 	import { downloadReport } from '$lib/templates/report.js';
-	import { formatCurrency } from '$lib/utility/convertCurrencies.js';
+	import { formatCurrency } from '$lib/utility/convert-currencies.js';
 	import Big from 'big.js';
 	import { formatDate } from 'date-fns';
 	import { getContext } from 'svelte';

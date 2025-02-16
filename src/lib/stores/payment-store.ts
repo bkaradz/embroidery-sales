@@ -1,4 +1,4 @@
-import { fx, type CurrencyConverter } from '$lib/utility/convertCurrencies';
+import { fx, type CurrencyConverter } from '$lib/utility/convert-currencies';
 import Big from 'big.js';
 import { writable } from 'svelte/store';
 

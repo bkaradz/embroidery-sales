@@ -2,7 +2,7 @@ import { getViewOrders } from '$lib/server/routes/orders';
 import { redirect, type Actions } from '@sveltejs/kit';
 import { redirect as flashRedirect } from 'sveltekit-flash-message/server';
 import type { PageServerLoad } from './$types';
-import { cancelOrder } from '$lib/server/routes/cancelOrder';
+import { cancelOrder } from '$lib/server/routes/cancel-order';
 
 export const load = (async () => {
   const viewOrders = await getViewOrders()

@@ -4,7 +4,7 @@
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import type { ComponentProps } from 'svelte';
 	import Gem from 'lucide-svelte/icons/gem';
-	import { navData } from '../../utility/navData';
+	import { navData } from '../../utility/nav-data';
 	import type { GetUserById } from '$lib/server/routes/auth';
 
 	let {

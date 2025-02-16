@@ -13,14 +13,14 @@ import {
 import { registerUser } from '../routes/auth';
 import { createCurrencies, getDefaultCurrencyByCode } from '../routes/currencies';
 import { createCustomers } from '../routes/customers';
-import { createJournalEntries } from '../routes/journalEntries';
+import { createJournalEntries } from '../routes/journal-entries';
 import { createNewOrder } from '../routes/orders';
-import { createNewPricingTier } from '../routes/pricingTiers';
+import { createNewPricingTier } from '../routes/pricing-tiers';
 import { createProduct } from '../routes/products';
 import { createTransaction } from '../routes/transactions';
 import * as schema from './schema/schema';
 import { customers } from './seed-data/customers';
-import { resetSqliteDatabase } from '../utility/resetDatabase';
+import { resetSqliteDatabase } from '../utility/reset-database';
 
 
 const main = async () => {

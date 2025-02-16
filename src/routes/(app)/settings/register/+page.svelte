@@ -7,7 +7,7 @@
 	import { superForm } from 'sveltekit-superforms';
 	import * as Card from '$lib/components/ui/card/index';
 	import type { CurrencyCode } from '$lib/utility/lists.js';
-	import { formatCurrency, fx } from '$lib/utility/convertCurrencies.js';
+	import { formatCurrency, fx } from '$lib/utility/convert-currencies.js';
 	import Big from 'big.js';
 	import { getContext } from 'svelte';
 	import DoubleArrowRight from 'svelte-radix/DoubleArrowRight.svelte';

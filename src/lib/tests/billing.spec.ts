@@ -1,18 +1,18 @@
 import { db } from '$lib/server/db';
 import { createAccounts } from '$lib/server/routes/accounts';
 import { registerUser } from '$lib/server/routes/auth';
-import { createCashRegister } from '$lib/server/routes/cashRegister';
+import { createCashRegister } from '$lib/server/routes/cash-register';
 import { createCurrencies } from '$lib/server/routes/currencies';
 import { getInventory, getInventoryByProductId } from '$lib/server/routes/inventory';
 import { createNewOrder, getOrderById, getUnpaidOrdersByCustomerId } from '$lib/server/routes/orders';
-import { createNewPricingTier } from '$lib/server/routes/pricingTiers';
+import { createNewPricingTier } from '$lib/server/routes/pricing-tiers';
 import { createProduct } from '$lib/server/routes/products';
 import type { OrdersSchema, ProductSchema } from '$lib/utility/schemas';
 import { formatDate } from 'date-fns';
 import { eq } from 'drizzle-orm';
 import { beforeEach, describe, expect, it } from 'vitest';
 import * as schema from '../server/db/schema/schema';
-import { resetSqliteDatabase } from '../server/utility/resetDatabase';
+import { resetSqliteDatabase } from '../server/utility/reset-database';
 
 
 describe('Billing [createNewOrder]', () => {

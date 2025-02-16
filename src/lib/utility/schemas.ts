@@ -1,7 +1,7 @@
 import type { Products } from '$lib/server/db/schema/schema';
 import { z } from 'zod';
 import { currencyCode, currencyName, expensesCategories, orderStatus, timeStatus, transactionPaymentMethods } from './lists';
-import { productCategories } from './configList';
+import { productCategories } from './config-list';
 import type { GetProducts } from '$lib/server/routes/products';
 
 export const productSchema = z

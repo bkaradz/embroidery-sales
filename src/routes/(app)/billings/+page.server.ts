@@ -2,7 +2,7 @@ import type { Customers } from '$lib/server/db/schema/schema';
 import { getCreditsTotalsByCustomerId, type GetCreditsTotalsByCustomerId } from '$lib/server/routes/credits';
 import { customerSelection, getCustomerById } from '$lib/server/routes/customers';
 import { createNewOrder } from '$lib/server/routes/orders';
-import { getPricingTiers } from '$lib/server/routes/pricingTiers';
+import { getPricingTiers } from '$lib/server/routes/pricing-tiers';
 import { getProducts } from '$lib/server/routes/products';
 import { type OrderStatus } from '$lib/utility/lists';
 import { ordersSchema } from '$lib/utility/schemas';

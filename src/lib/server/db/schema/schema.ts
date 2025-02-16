@@ -1,6 +1,6 @@
 import { relations, sql } from 'drizzle-orm';
 import { index, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
-import { productCategories } from '../../../utility/configList';
+import { productCategories } from '../../../utility/config-list';
 import {
   accountsType,
   cashTransactionsType,

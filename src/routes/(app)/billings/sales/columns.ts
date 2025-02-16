@@ -1,7 +1,7 @@
 import { Checkbox } from "$lib/components/ui/checkbox";
 import { renderComponent, renderSnippet } from "$lib/components/ui/data-table/index";
 import type { GetSalesBookResult } from "$lib/server/routes/orders";
-import { formatCurrency } from "$lib/utility/convertCurrencies";
+import { formatCurrency } from "$lib/utility/convert-currencies";
 import type { Converter } from "$lib/utility/schemas";
 import type { ColumnDef } from "@tanstack/table-core";
 import { format } from "date-fns";

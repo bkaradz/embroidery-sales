@@ -6,7 +6,7 @@
 	import * as Select from '$lib/components/ui/select/index';
 	import * as Table from '$lib/components/ui/table/index';
 	import type { Products } from '$lib/server/db/schema/schema';
-	import { cartItems } from '$lib/stores/billingStore';
+	import { cartItems } from '$lib/stores/billing-store';
 	import type { NewProduct } from '$lib/utility/schemas';
 	import type {
 		ColumnDef,

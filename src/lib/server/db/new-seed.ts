@@ -1,7 +1,7 @@
 import { logger } from "$lib/utility/logger";
 import { seed } from "drizzle-seed";
 import { db } from '.';
-import { resetSqliteDatabase } from '../utility/resetDatabase';
+import { resetSqliteDatabase } from '../utility/reset-database';
 import * as schema from './schema/schema';
 
 async function main() {

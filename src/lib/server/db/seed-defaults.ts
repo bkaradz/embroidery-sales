@@ -5,7 +5,7 @@ import { logger } from '../../utility/logger';
 import { createAccounts } from '../routes/accounts';
 import { registerUser } from '../routes/auth';
 import { createCurrencies } from '../routes/currencies';
-import { resetSqliteDatabase } from '../utility/resetDatabase';
+import { resetSqliteDatabase } from '../utility/reset-database';
 import * as schema from './schema/schema';
 
 

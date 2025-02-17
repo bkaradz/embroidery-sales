@@ -147,7 +147,7 @@ export type NewAccounts = typeof accounts.$inferInsert;
 export const transaction = sqliteTable('transaction', {
   id: integer('id', { mode: 'number' }).primaryKey({ autoIncrement: true }),
   userId: text('user_id').notNull().references(() => user.id),
-  customerId: integer('customer_id').notNull().references(() => customers.id),
+  customerId: integer('customer_id').references(() => customers.id), // is null if its expenses
   currencyId: integer('currency_id').references(() => currenciesDetails.id), // if it is null check cashTransactions
   date: text('date').default(sql`CURRENT_TIMESTAMP`).notNull(),
   description: text('description').notNull(),
@@ -159,6 +159,7 @@ export const transaction = sqliteTable('transaction', {
 export const transactionRelations = relations(transaction, ({ many, one }) => ({
   payments: many(payments),
   credits: one(credits),
+  expenses: one(expenses),
   customers: one(customers, { references: [customers.id], fields: [transaction.customerId] }),
   cashTransactions: many(cashTransactions)
 }));
@@ -266,7 +267,7 @@ export type NewPricingTierDetails = typeof pricingTierDetails.$inferInsert;
 export const payments = sqliteTable('payments', {
   id: integer('id', { mode: 'number' }).primaryKey({ autoIncrement: true }),
   userId: text('user_id').notNull().references(() => user.id),
-  customerId: integer('customer_id').notNull().references(() => customers.id),
+  customerId: integer('customer_id').references(() => customers.id),
   /**
    * Sum of amount of payments(1 or many) + credits(null or 1) for a transactionId = transaction.totalAmountTransacted
    * transaction and payments are read only once created, credits can be updated
@@ -396,6 +397,10 @@ export const production = sqliteTable('production', {
   instructions: text('instructions')
 });
 
+export const productionRelations = relations(production, ({ one }) => ({
+  orderItems: one(orderItems, { fields: [production.orderItemsId], references: [orderItems.id] }),
+}));
+
 export type Production = typeof production.$inferSelect;
 export type NewProduction = typeof production.$inferInsert;
 
@@ -403,13 +408,18 @@ export const refunds = sqliteTable('refunds', {
   id: integer('id', { mode: 'number' }).primaryKey({ autoIncrement: true }),
   userId: text('user_id').notNull().references(() => user.id),
   customerId: integer('customer_id').notNull().references(() => customers.id),
-  orderId: integer('order_id').notNull().references(() => orders.id),
-  paymentId: integer('payment_id').notNull().references(() => payments.id),
+  orderId: integer('order_id').references(() => orders.id), // No orderId if coming from credit
   transactionId: integer('transaction_id').notNull().references(() => transaction.id),
   amount: integer('amount').notNull(),
   refundDate: text('refund_date').default(sql`CURRENT_TIMESTAMP`).notNull(),
   reason: text('reason')
 });
+
+export const refundsRelations = relations(refunds, ({ one }) => ({
+  transaction: one(transaction, { fields: [refunds.transactionId], references: [transaction.id] }),
+  customers: one(customers, { fields: [refunds.customerId], references: [customers.id] }),
+  orders: one(orders, { fields: [refunds.orderId], references: [orders.id] }),
+}));
 
 export type Refunds = typeof refunds.$inferSelect;
 export type NewRefunds = typeof refunds.$inferInsert;
@@ -423,6 +433,10 @@ export const expenses = sqliteTable('expenses', {
   description: text('description'),
   receipt: text('receipt').notNull(),
 });
+
+export const expensesRelations = relations(expenses, ({ one }) => ({
+  transaction: one(transaction, { fields: [expenses.transactionId], references: [transaction.id] }),
+}));
 
 export type Expenses = typeof expenses.$inferSelect;
 export type NewExpenses = typeof expenses.$inferInsert;

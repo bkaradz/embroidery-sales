@@ -89,9 +89,9 @@ export const createPayments = async (userId: string, paymentsData: PaymentsSchem
 type Tx = SQLiteTransaction<
   'sync',
   Database.RunResult,
-  typeof import('/home/karadz/development/svelte5/src/lib/server/db/schema/schema'),
+  typeof import('$lib/server/db/schema/schema'),
   ExtractTablesWithRelations<
-    typeof import('/home/karadz/development/svelte5/src/lib/server/db/schema/schema')
+    typeof import('$lib/server/db/schema/schema')
   >
 >;
 

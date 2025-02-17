@@ -11,10 +11,11 @@
 	import Big from 'big.js';
 	import { getContext } from 'svelte';
 	import DoubleArrowRight from 'svelte-radix/DoubleArrowRight.svelte';
+	import type { PageProps } from './$types';
 
 	const viewCurrency = getContext('viewCurrency') as () => string;
 
-	let { data } = $props();
+	let { data }: PageProps = $props();
 
 	let className: string | undefined | null = undefined;
 	export { className as class };

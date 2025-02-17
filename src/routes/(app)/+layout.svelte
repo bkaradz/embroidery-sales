@@ -4,13 +4,14 @@
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import * as Select from '$lib/components/ui/select/index';
-	import { setContext } from 'svelte';
+	import { setContext, type Snippet } from 'svelte';
 	import Moon from 'lucide-svelte/icons/moon';
 	import Sun from 'lucide-svelte/icons/sun';
 	import { toggleMode } from 'mode-watcher';
 	import Button from '$lib/components/ui/button/button.svelte';
+	import type { LayoutProps } from './$types';
 
-	let { data, children } = $props();
+	let { data, children }: LayoutProps = $props();
 
 	const currenciesNames = $state(data.currenciesNames);
 

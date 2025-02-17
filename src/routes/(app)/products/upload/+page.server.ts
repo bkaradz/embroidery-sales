@@ -47,6 +47,7 @@ export const actions = {
 
     const validatedResult = productArraySchema.safeParse(processedData);
     if (!validatedResult.success) {
+      console.log("🚀 ~ default: ~ validatedResult:", validatedResult.error)
       return message(form, { status: 'error', text: 'Products validation failed' });
     }
 

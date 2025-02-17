@@ -1,6 +1,6 @@
 import { error } from "@sveltejs/kit";
 import { db } from "../db";
-import { accounts, credits, inventory, inventoryTransactions, journalEntries, orders, payments, transaction, type NewOrders, type NewPayments } from "../db/schema/schema";
+import { accounts, credits, inventory, inventoryTransactions, journalEntries, orders, payments, transaction, type NewCredits, type NewOrders, type NewPayments } from "../db/schema/schema";
 import { addYears, formatDate } from "date-fns";
 import type { SQLiteTransaction } from "drizzle-orm/sqlite-core";
 import type Database from "better-sqlite3";
@@ -75,6 +75,11 @@ export const cancelOrder = async (userId: string, orderId: number, cancellationR
           transData.map(async (payment) => {
             const { amount, customerId } = payment
             const { id, currencyId, paymentMethod } = payment.transaction
+
+            if (!customerId) {
+              tx.rollback();
+              error(404, { message: 'Customer not found' });
+            }
 
             // reverse transaction
             const cancelledTransaction = await tx.insert(transaction).values({
@@ -261,9 +266,9 @@ export type CancelOrder = Awaited<ReturnType<typeof cancelOrder>>;
 type Tx = SQLiteTransaction<
   'sync',
   Database.RunResult,
-  typeof import('/home/karadz/development/svelte5/src/lib/server/db/schema/schema'),
+  typeof import('$lib/server/db/schema/schema'),
   ExtractTablesWithRelations<
-    typeof import('/home/karadz/development/svelte5/src/lib/server/db/schema/schema')
+    typeof import('$lib/server/db/schema/schema')
   >
 >;
 

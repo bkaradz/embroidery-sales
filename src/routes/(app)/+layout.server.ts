@@ -10,9 +10,9 @@ export const load = (async (event) => {
     return redirect(302, "/");
   }
   const [rates, userData, currencyResults] = await Promise.all([
-    await getDefaultRates(),
-    await getUserById(user.id),
-    await getDefaultCurrencies(),
+    getDefaultRates(),
+    getUserById(user.id),
+    getDefaultCurrencies(),
   ])
 
   const currenciesNames = currencyResults.map((item) => {

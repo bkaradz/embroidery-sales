@@ -20,8 +20,8 @@ export const load = (async (event) => {
 
   if (customerId) {
     [credits, selectedCustomer] = await Promise.all([
-      await getCreditsTotalsByCustomerId(+customerId),
-      await getCustomerById(+customerId)
+      getCreditsTotalsByCustomerId(+customerId),
+      getCustomerById(+customerId)
     ]);
   }
 

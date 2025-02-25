@@ -8,6 +8,7 @@ import { redirect } from '@sveltejs/kit';
 import { productArraySchema, type ProductArraySchema } from '$lib/utility/schemas';
 import { productDataConversion, type ConProduct } from '$lib/utility/product-conversion';
 import type { NewProducts } from '$lib/server/db/schema/schema';
+import { logger } from '$lib/utility/logger';
 
 const fileUploadSchema = z.object({
   file: z.instanceof(File, { message: 'Please upload a file.' })
@@ -47,7 +48,8 @@ export const actions = {
 
     const validatedResult = productArraySchema.safeParse(processedData);
     if (!validatedResult.success) {
-      console.log("🚀 ~ default: ~ validatedResult:", validatedResult.error)
+      logger.info("Validation Error:", validatedResult.error)
+      console.log("Validation Error:", validatedResult.error)
       return message(form, { status: 'error', text: 'Products validation failed' });
     }
 

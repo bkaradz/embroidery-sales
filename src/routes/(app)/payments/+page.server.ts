@@ -18,16 +18,16 @@ export const load = (async (event) => {
   const customerId = event.url.searchParams.get('customer')
   if (customerId) {
     [orders, credits, selectedCustomer] = await Promise.all([
-      await getUnpaidOrdersByCustomerId(+customerId),
-      await getCreditsTotalsByCustomerId(+customerId),
-      await getCustomerById(+customerId)
+      getUnpaidOrdersByCustomerId(+customerId),
+      getCreditsTotalsByCustomerId(+customerId),
+      getCustomerById(+customerId)
     ]);
   }
 
   const [customers, todaysCashRegister, currencies] = await Promise.all([
-    await customerSelection(),
-    await getTodaysCashRegister(),
-    await getDefaultCurrencies()
+    customerSelection(),
+    getTodaysCashRegister(),
+    getDefaultCurrencies()
   ]);
 
   type PaidCurrencies = { code: string, checked: boolean, amount: number, label: string }

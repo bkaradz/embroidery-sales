@@ -78,6 +78,7 @@ export const products = sqliteTable('products', {
   productCategory: text('product_category', { enum: productCategories }).notNull().default('Embroidery'),
   basePrice: integer('base_price'), // -- Price per unit
   stitches: integer('stitches'),
+  hash: text('hash'),
   isEmbroidery: integer('is_embroidery', { mode: 'boolean' }).notNull().default(true),
   isDeleted: integer('is_deleted', { mode: 'boolean' }).notNull().default(false),
   ...timestamp
@@ -85,7 +86,8 @@ export const products = sqliteTable('products', {
   (t) => [
     index('products_is_deleted_idx').on(t.isDeleted),
     index('stitches_idx').on(t.stitches),
-    index('is_embroidery_idx').on(t.isEmbroidery)
+    index('is_embroidery_idx').on(t.isEmbroidery),
+    index('hash_idx').on(t.hash)
   ]
 );
 

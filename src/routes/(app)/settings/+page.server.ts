@@ -14,19 +14,19 @@ export const load = (async () => {
   // const paymentsAudit = await auditPayments()
   // const customerAudit = await auditCustomer()
   // /run/media/karadz/A2A8611CA860EFE9/Users/karadz/Desktop/WORKS/
-  const LOGO_PATH = '/run/media/karadz/A2A8611CA860EFE9/Users/karadz/Desktop/WORKS'
+  // const LOGO_PATH = '/run/media/karadz/A2A8611CA860EFE9/Users/karadz/Desktop/WORKS'
 
-  // const LOGO_PATH = '/home/karadz/development/sidebar/src/lib/emb'
-  const EXTENSION = '.emb'
+  // // const LOGO_PATH = '/home/karadz/development/sidebar/src/lib/emb'
+  // const EXTENSION = '.emb'
 
-  const filesEMB = await findFilesInDir(LOGO_PATH, EXTENSION)
-  // console.log("files", filesEMB);
+  // const filesEMB = await findFilesInDir(LOGO_PATH, EXTENSION)
+  // // console.log("files", filesEMB);
 
-  const hashResults: any[] = []
-  Array.from(filesEMB.values()).forEach((file, index) => {
-    hashResults.push([file.name, { ...file, hash: generateHash(file.path) }])
-  })
-  console.log("🚀 ~ load ~ hashResults:", hashResults)
+  // const hashResults: any[] = []
+  // Array.from(filesEMB.values()).forEach((file, index) => {
+  //   hashResults.push([file.name, { ...file, hash: generateHash(file.path) }])
+  // })
+  // console.log("🚀 ~ load ~ hashResults:", hashResults)
 
   // const resolvedEntries = await Promise.all(hashResults);
 

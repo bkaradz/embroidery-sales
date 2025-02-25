@@ -113,6 +113,10 @@ export const navData = {
       icon: Cog,
       items: [
         {
+          title: 'Company Setup',
+          url: '/settings/company'
+        },
+        {
           title: 'Cash Register',
           url: '/settings/register'
         },

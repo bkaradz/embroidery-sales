@@ -62,15 +62,11 @@ export const actions = {
       return results;
     };
 
-    // await createProducts(userId, processedData)
-    chunks(validatedResult.data, 1000).forEach(async (product) => {
-
+    chunks(validatedResult.data, 500).forEach(async (product, index) => {
       await uploadProducts(product as unknown as NewProducts[])
     })
 
     return message(form, { status: 'success', text: 'Products has been Uploaded' });
-
-    // return withFiles({ form });
 
   }
 };

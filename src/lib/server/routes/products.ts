@@ -7,7 +7,23 @@ import { logger } from "$lib/utility/logger";
 
 export const uploadProducts = async (productsData: NewProducts[]) => {
 
-  return await db.insert(products).values(productsData).returning()
+  try {
+
+    productsData.forEach(async (product, index) => {
+
+      const { name, ...restData } = product
+
+      await db.insert(products).values({ ...product }).onConflictDoUpdate({
+        target: products.name,
+        set: restData
+      })
+    })
+
+    return { success: true }
+  } catch (error) {
+    logger.error({ 'module': 'products.ts', 'function': 'uploadProducts', err: error },)
+    throw new Error("Products Upload failed");
+  }
 
 }
 
